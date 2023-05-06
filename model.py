@@ -7,13 +7,13 @@ class Classifier(nn.Module):
         self.conv1 = nn.Conv2d(
             in_channels=3, out_channels=216, kernel_size=(4, 4), stride=(2, 2))
         self.conv2 = nn.Conv2d(
-            in_channels=3, out_channels=180, kernel_size=(4, 4), stride=(2, 2))
+            in_channels=216, out_channels=180, kernel_size=(4, 4), stride=(2, 2))
         self.conv3 = nn.Conv2d(
-            in_channels=3, out_channels=144, kernel_size=(4, 4), stride=(2, 2))
+            in_channels=180, out_channels=144, kernel_size=(4, 4), stride=(2, 2))
         self.conv4 = nn.Conv2d(
-            in_channels=3, out_channels=108, kernel_size=(4, 4), stride=(2, 2))
+            in_channels=144, out_channels=108, kernel_size=(4, 4), stride=(2, 2))
         self.conv5 = nn.Conv2d(
-            in_channels=3, out_channels=72, kernel_size=(4, 4), stride=(2, 2))
+            in_channels=108, out_channels=72, kernel_size=(4, 4), stride=(2, 2))
         self.pool = nn.MaxPool2d(kernel_size=(5, 5), stride=(5, 5))
         self.flt = nn.Flatten();
         self.fc1 = nn.Linear(72, 36)
